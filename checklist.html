@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senior Year Checklist | SixFifty</title>
+<meta name="description" content="A free checklist of every step in a college application, from the list to the final submit.">
+<link rel="icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="./">65<b>0</b> <span>SixFifty</span></a>
+  <a class="btn small" href="./#book">Book a free call</a>
+</header>
+<section class="page">
+  <h1>The senior year checklist</h1>
+  <p class="lead">Every step of a college application on one page. Tap a box to check it off, or print it. Dates are typical; always confirm each college's own deadline on its website.</p>
+
+  <h2>Your list</h2>
+  <ul class="check">
+    <li>Write down what you want: size, location, majors, cost.</li>
+    <li>Pick 8 to 12 schools: a few reaches, several targets, at least 2 likely schools you'd be happy at.</li>
+    <li>Run each school's net price calculator with a parent.</li>
+    <li>Decide whether to apply Early Decision (binding) anywhere.</li>
+  </ul>
+
+  <h2>Testing and recommendations</h2>
+  <ul class="check">
+    <li>Check each school's test policy: required, optional or test blind.</li>
+    <li>Send official scores where required.</li>
+    <li>Ask two teachers for recommendations at least a month before your first deadline.</li>
+    <li>Give your counselor and teachers a short brag sheet.</li>
+  </ul>
+
+  <h2>Activities</h2>
+  <ul class="check">
+    <li>List everything you've done since 9th grade, then pick your top 10.</li>
+    <li>Put the most important activity first.</li>
+    <li>Write each description with numbers: hours, people, results.</li>
+    <li>Pick up to 5 honors for the Common App.</li>
+  </ul>
+
+  <h2>Essays</h2>
+  <ul class="check">
+    <li>Choose a Common App prompt and write a messy first draft. The limit is <b>650 words</b>.</li>
+    <li>Make a list of every supplement for every school, with word counts.</li>
+    <li>Write "why us" essays with details you can only find for that one school.</li>
+    <li>Get feedback from one or two people, not ten.</li>
+    <li>Read every essay out loud before you submit.</li>
+  </ul>
+
+  <h2>Deadlines</h2>
+  <ul class="check">
+    <li><b>Nov 1 or Nov 15:</b> most Early Decision and Early Action deadlines.</li>
+    <li><b>Oct 1 onward:</b> FAFSA and CSS Profile open. File early; some aid is first come.</li>
+    <li><b>Jan 1 to Jan 15:</b> most Regular Decision deadlines.</li>
+    <li>Put every deadline, and the date you want to finish a week before it, in one calendar.</li>
+  </ul>
+
+  <h2>Before you hit submit</h2>
+  <ul class="check">
+    <li>Preview the PDF of each application.</li>
+    <li>Check that the right school name is in every "why us" essay.</li>
+    <li>Pay or request a fee waiver.</li>
+    <li>Make an account on each school's applicant portal and check it for missing documents.</li>
+  </ul>
+
+  <div class="book-box" style="margin-top:50px">
+    <h2>Stuck on any of these?</h2>
+    <p>Book a free 20-minute call and we'll go through your checklist with you.</p>
+    <a class="btn" href="./#book">Book a free call</a>
+  </div>
+</section>
+<footer><p><b>SixFifty</b> · <a href="./">Home</a> · <a href="privacy.html">Privacy</a></p><p class="fine">SixFifty is not affiliated with any college. No one can guarantee admission.</p></footer>
+<script>
+document.querySelectorAll('.check li').forEach(function(li,i){
+  var k='sf-check-'+i;
+  try{ if(localStorage.getItem(k)) li.classList.add('done'); }catch(e){}
+  li.addEventListener('click',function(){
+    li.classList.toggle('done');
+    try{ li.classList.contains('done')?localStorage.setItem(k,1):localStorage.removeItem(k); }catch(e){}
+  });
+});
+</script>
+<style>.check li{cursor:pointer}.check li.done{color:var(--mute);text-decoration:line-through}.check li.done:before{background:var(--y)}</style>
+</body>
+</html>
